@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  /* Bright Cream Engineering Workstation Palette */
+  --bg-app: #F7F4EC;
+  --bg-panel: #FFFDF7;
+  --bg-surface: #F1EEE5;
+  --border-color: #DDD8CC;
+  --border-subtle: #E8E3D7;
+  --text-primary: #202124;
+  --text-secondary: #62625D;
+  --text-muted: #878782;
+  --accent-amber: #D97706;
+  --accent-cyan: #0891B2;
+  --accent-blue: #2563EB;
+  --accent-emerald: #059669;
+  --accent-red: #DC2626;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(32, 33, 36, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(32, 33, 36, 0.06), 0 2px 4px -1px rgba(32, 33, 36, 0.04);
+}
+
+.dark {
+  /* Industrial Command Center Palette */
+  --bg-app: #080C14;
+  --bg-panel: #0F1626;
+  --bg-surface: #172033;
+  --border-color: #243048;
+  --border-subtle: #1C273C;
+  --text-primary: #F9FAFB;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --accent-amber: #F59E0B;
+  --accent-cyan: #06B6D4;
+  --accent-blue: #3B82F6;
+  --accent-emerald: #10B981;
+  --accent-red: #EF4444;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar styled for theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #DDD8CC;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #243048;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C4BEAF;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+.telemetry-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Base custom utility helpers */
+.bg-app { background-color: var(--bg-app); }
+.bg-panel { background-color: var(--bg-panel); }
+.bg-surface { background-color: var(--bg-surface); }
+.border-theme { border-color: var(--border-color); }
+.text-main { color: var(--text-primary); }
+.text-sub { color: var(--text-secondary); }
